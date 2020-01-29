@@ -1,14 +1,9 @@
-import selenium
 from selenium import webdriver
-import datetime 
+from webdriver_manager.chrome import ChromeDriverManager
 from datetime import datetime
 import pyaudio
 import audioop
 import speech_recognition as sr
-path = r'C:\Users\Philip\AppData\Local\Programs\Python\Python37-32/chromedriver.exe'
-driver = webdriver.Chrome(path)
-driver.maximize_window()
-browser_name_list = []
 
 class Chrome_Command():
     
@@ -70,7 +65,7 @@ class Chrome_Command():
 class Voice():
         
     def __init__(self):
-        self.threshold = 1500
+        self.threshold = 4700
         self.chunk = 1024
         self.fs = 44100
         self.sample_format = pyaudio.paInt16
@@ -162,6 +157,9 @@ def decision_tree(text):
     for i in word_list:
         if i in text and 'chrome' in text and 'link' in text:
             user_command.find_links(number_dic[i], browser_name_list[-1])    
-            
-command = Voice()
-command.initialize_recognition()
+
+if __name__ == '__main__':
+    driver = webdriver.Chrome(ChromeDriverManager().install())
+    browser_name_list = []
+    voice = Voice()
+    voice.initialize_recognition()
