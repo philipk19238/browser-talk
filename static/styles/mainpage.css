@@ -1,0 +1,8 @@
+#wrapper {
+   width: 100%;
+   height: 650px;
+   border: 20px solid midnightblue;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}

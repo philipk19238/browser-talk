@@ -1,0 +1,9 @@
+Flask==1.1.1
+numpy==1.18.1
+pandas==0.25.3
+PyAudio==0.2.11
+selenium==3.141.0
+SpeechRecognition==3.8.1
+virtualenv==16.7.9
+webdriver-manager==2.3.0
+
